@@ -19,13 +19,13 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 1, name: "Redsy", species: "Red handfish", region: "Oceania", rarity: "Critically endangered", image: "/plushies/red-handfish-neutral.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
+  { id: 1, name: "Redsy", species: "Red handfish", region: "Oceania", rarity: "Critically endangered", image: "/plushies/redsy.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
   { id: 2, name: "Moss", species: "Kākāpō", region: "Oceania", rarity: "Critically endangered", image: "/plushies/kakapo-neutral.png", color: "#476f2e", accent: "#ffffff", fact: "Kākāpō are the world’s only flightless, nocturnal parrots.", badge: "New" },
   { id: 3, name: "Wrinkle", species: "Chinese giant salamander", region: "Asia", rarity: "Critically endangered", image: "/plushies/chinese-giant-salamander-neutral.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
 ];
 
 const heroCards = [
-  { name: "Redsy", species: "Red handfish", plush: "/plushies/red-handfish-neutral.png", wild: "/references/red-handfish-wild.jpg" },
+  { name: "Redsy", species: "Red handfish", plush: "/plushies/redsy.png", wild: "/references/red-handfish-wild.jpg" },
   { name: "Moss", species: "Kākāpō", plush: "/plushies/kakapo-neutral.png", wild: "/references/kakapo-wild.jpg" },
   { name: "Wrinkle", species: "Chinese giant salamander", plush: "/plushies/chinese-giant-salamander-neutral.png", wild: "/references/chinese-giant-salamander-wild.jpg" },
 ];
@@ -52,7 +52,7 @@ const mythChecks: MythCheck[] = [
   {
     id: "handfish",
     animal: "Red handfish",
-    image: "/plushies/red-handfish-neutral.png",
+    image: "/plushies/redsy.png",
     color: "#9f352d",
     claim: "A fish this strange must be common somewhere.",
     verdict: "False",
@@ -133,7 +133,7 @@ type AnimalRecord = {
 };
 
 const animalRecords: AnimalRecord[] = [
-  { code: "OD-REDSY-104", name: "Redsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/plushies/red-handfish-neutral.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
+  { code: "OD-REDSY-104", name: "Redsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/plushies/redsy.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
   { code: "OD-MOSS-208", name: "Moss", species: "Kākāpō", place: "Whenua Hou, Aotearoa New Zealand", habitat: "Predator-free island forest", image: "/plushies/kakapo-neutral.png", lat: -46.77, lng: 167.64, marker: "KP", color: "#476f2e" },
   { code: "OD-WRINKLE-311", name: "Wrinkle", species: "Chinese giant salamander", place: "Central and southern China", habitat: "Cool, fast-flowing mountain rivers", image: "/plushies/chinese-giant-salamander-neutral.png", lat: 30.55, lng: 110.48, marker: "GS", color: "#584636" },
   { code: "OD-FLAP-419", name: "Flap", species: "Dumbo octopus", place: "North Atlantic deep sea", habitat: "Cold abyssal plains, roughly 3,000–4,000 m deep", image: "/plushies/dumbo-octopus-ugly.png", lat: 38.2, lng: -31.1, marker: "DO", color: "#164f74" },
@@ -461,14 +461,14 @@ export default function Home() {
             <div className="creature-facts"><div><span>Habitat</span><b>Shallow Tasmanian reefs</b></div><div><span>Status</span><b>Critically endangered</b></div><div><span>Odd talent</span><b>Walking on its fins</b></div></div>
             <p className="drag-note">Designed with a compact body, padded walking fins, embroidered markings, simple felt teeth, and factory-friendly seam placement.</p>
           </div>
-          <div className="plush-showcase"><Image src="/plushies/red-handfish-neutral.png" alt="Manufacturable red handfish plush with a calm neutral face" fill sizes="(max-width: 900px) 100vw, 58vw" priority /></div>
+          <div className="plush-showcase"><Image src="/plushies/redsy.png" alt="Manufacturable red handfish plush with a calm neutral face" fill sizes="(max-width: 900px) 100vw, 58vw" priority /></div>
         </div>
       </section>
 
       <section className="donation-section" id="donate">
         <div className="shell donation-heading"><div><span className="kicker light">Direct support, no middleman</span><h2>Help the real animals,<br/>not just the plush ones.</h2></div><p>Oddkin does not collect these donations. Each button opens the conservation program’s own secure donation page so you can see exactly who receives your support.</p></div>
         <div className="shell donation-grid">
-          <article><div className="donation-plush"><Image src="/plushies/red-handfish-neutral.png" alt="Red handfish plush" fill sizes="160px" /></div><span>Australia · marine recovery</span><h3>Handfish Conservation Project</h3><p>Support surveys, habitat restoration, captive breeding, and reintroduction for Tasmania’s rare handfish.</p><a href="https://handfish.org.au/donate/" target="_blank" rel="noreferrer">Donate to handfish <Icon name="arrow"/></a></article>
+          <article><div className="donation-plush"><Image src="/plushies/redsy.png" alt="Red handfish plush" fill sizes="160px" /></div><span>Australia · marine recovery</span><h3>Handfish Conservation Project</h3><p>Support surveys, habitat restoration, captive breeding, and reintroduction for Tasmania’s rare handfish.</p><a href="https://handfish.org.au/donate/" target="_blank" rel="noreferrer">Donate to handfish <Icon name="arrow"/></a></article>
           <article><div className="donation-plush"><Image src="/plushies/kakapo-neutral.png" alt="Kākāpō plush" fill sizes="160px" /></div><span>Aotearoa New Zealand · species recovery</span><h3>Kākāpō Recovery</h3><p>Fund monitoring, research, health checks, predator control, and management of breeding seasons.</p><a href="https://www.doc.govt.nz/kakapo-donate" target="_blank" rel="noreferrer">Donate to kākāpō <Icon name="arrow"/></a></article>
           <article><div className="donation-plush"><Image src="/plushies/chinese-giant-salamander-neutral.png" alt="Chinese giant salamander plush" fill sizes="160px" /></div><span>China · amphibian conservation</span><h3>Giant salamander conservation</h3><p>Learn about the field work protecting fragmented river populations and support ZSL conservation programs.</p><a href="https://www.zsl.org/what-we-do/projects/chinese-giant-salamander-conservation" target="_blank" rel="noreferrer">Visit the program <Icon name="arrow"/></a></article>
         </div>
@@ -476,7 +476,7 @@ export default function Home() {
 
       <section className="passport-section shell" id="passport">
         <div className="passport-visual">
-          <div className="passport-cover"><span>ODDKIN</span><b>FIELD<br/>PASSPORT</b><i><Image src="/plushies/red-handfish-neutral.png" alt="" fill sizes="64px" /></i><small>Junior conservation club</small></div>
+          <div className="passport-cover"><span>ODDKIN</span><b>FIELD<br/>PASSPORT</b><i><Image src="/plushies/redsy.png" alt="" fill sizes="64px" /></i><small>Junior conservation club</small></div>
           <div className="passport-page"><span>SPECIES SIGHTINGS</span><div className="stamp-grid">{products.slice(0,4).map((p) => <div key={p.id}><i><Image src={p.image} alt="" fill sizes="34px" /></i><small>{p.species}</small></div>)}</div></div>
         </div>
         <div className="passport-copy">
