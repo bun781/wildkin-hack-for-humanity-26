@@ -32,7 +32,7 @@ const heroCards = [
 
 // Plushies are never sold individually: the bag only ever holds habitat blind boxes.
 // Placeholder price, change it here once the real price is set.
-const BLIND_BOX_PRICE = 36;
+const BLIND_BOX_PRICE = 24;
 
 const filters = ["All", "Oceania", "Asia"];
 
