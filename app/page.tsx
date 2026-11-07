@@ -291,7 +291,7 @@ export default function Home() {
         </div>
         <div className="wildlife-heading">
           <div><span className="kicker">Wildlife reference board</span><h2>Four more wonderfully strange originals</h2></div>
-          <p>These are real-animal photographs, kept separate from the finished plush concepts, so every future design starts with the species instead of a generic cartoon silhouette.</p>
+          <p>These are real-animal photographs, kept separate from the finished plush concepts, so every future design starts with the species.</p>
         </div>
         <div className="wildlife-grid">
           {wildlifeReferences.map((animal) => (
@@ -319,7 +319,7 @@ export default function Home() {
             </div>
           </div>
           <div className="impact-card">
-            <div className="impact-orbit"><span className="big-leaf"><Icon name="leaf" /></span><strong>10%</strong><small>of each purchase<br/>supports wildlife</small></div>
+            <div className="impact-orbit"><span className="big-leaf"><Icon name="leaf" /></span><strong>100%</strong><small>of each purchase<br/>supports wildlife</small></div>
             <p>Built around recycled fill, reduced-plastic packaging, and stories that make conservation feel hopeful.</p>
             <a href="#donate">Explore the mission <Icon name="arrow" /></a>
           </div>
@@ -417,7 +417,7 @@ export default function Home() {
         <div className="shell footer-bottom"><span>© 2026 Wildkin. Concept storefront.</span><span>Made with care for the wonderfully wild.</span></div>
       </footer>
 
-      {cartOpen && <><button className="drawer-backdrop" aria-label="Close cart" onClick={() => setCartOpen(false)}/><aside className="cart-drawer" aria-label="Shopping bag"><div className="drawer-title"><div><span>Your field bag</span><h2>{cart.length ? `${cart.length} blind box${cart.length > 1 ? "es" : ""}` : "Ready for an adventure"}</h2></div><button className="icon-button" onClick={() => setCartOpen(false)} aria-label="Close cart"><Icon name="close" /></button></div>{cart.length === 0 ? <div className="empty-cart"><span><Icon name="leaf"/></span><h3>Your bag is feeling light</h3><p>Pick a habitat blind box and a mystery friend will travel home with you.</p><button className="button dark" onClick={() => { setCartOpen(false); document.getElementById("blind-boxes")?.scrollIntoView({ behavior: "smooth" }); }}>Choose a blind box</button></div> : <><div className="cart-items">{cart.map((item, index) => <div className="cart-item" key={`${item.id}-${index}`}><span className="cart-box" style={{background:item.color}} aria-hidden="true">{item.glyph}</span><div><small>Mystery plush inside</small><b>{item.name} box</b><button onClick={() => setCart(items => items.filter((_, i) => i !== index))}>Remove</button></div><strong>${BLIND_BOX_PRICE}</strong></div>)}</div><div className="cart-summary"><div><span>Subtotal</span><b>${total}</b></div><small>Shipping calculated at checkout. 10% supports wildlife.</small><button className="checkout">Checkout · ${total}</button></div></>}</aside></>}
+      {cartOpen && <><button className="drawer-backdrop" aria-label="Close cart" onClick={() => setCartOpen(false)}/><aside className="cart-drawer" aria-label="Shopping bag"><div className="drawer-title"><div><span>Your field bag</span><h2>{cart.length ? `${cart.length} blind box${cart.length > 1 ? "es" : ""}` : "Ready for an adventure"}</h2></div><button className="icon-button" onClick={() => setCartOpen(false)} aria-label="Close cart"><Icon name="close" /></button></div>{cart.length === 0 ? <div className="empty-cart"><span><Icon name="leaf"/></span><h3>Your bag is feeling light</h3><p>Pick a habitat blind box and a mystery friend will travel home with you.</p><button className="button dark" onClick={() => { setCartOpen(false); document.getElementById("blind-boxes")?.scrollIntoView({ behavior: "smooth" }); }}>Choose a blind box</button></div> : <><div className="cart-items">{cart.map((item, index) => <div className="cart-item" key={`${item.id}-${index}`}><span className="cart-box" style={{background:item.color}} aria-hidden="true">{item.glyph}</span><div><small>Mystery plush inside</small><b>{item.name} box</b><button onClick={() => setCart(items => items.filter((_, i) => i !== index))}>Remove</button></div><strong>${BLIND_BOX_PRICE}</strong></div>)}</div><div className="cart-summary"><div><span>Subtotal</span><b>${total}</b></div><small>Shipping calculated at checkout. 100% supports wildlife.</small><button className="checkout">Checkout · ${total}</button></div></>}</aside></>}
     </main>
   );
 }
