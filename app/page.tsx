@@ -421,7 +421,6 @@ export default function Home() {
               <div><dt>Misinformation</dt><dd>False information shared by mistake, like passing along an AI-made animal video that looks real.</dd></div>
               <div><dt>Disinformation</dt><dd>False information spread on purpose, like selling wild-caught animals as captive-bred.</dd></div>
             </dl>
-            <div className="truth-rule"><span>WILDKIN RULE 01</span><b>Hide the plush. Never hide the source.</b></div>
           </div>
           <div className="stat-grid">
             <article><strong>292%</strong><p>rise in wildlife selfies posted on Instagram from 2014 to 2017. About 4 in 10 showed someone holding, hugging, or otherwise handling a wild animal.</p><a href="https://www.newswire.ca/news-releases/iconic-wild-animals-suffering-for-selfies-649260263.html" target="_blank" rel="noreferrer">World Animal Protection, 2017 <Icon name="arrow" /></a></article>
