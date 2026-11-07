@@ -331,13 +331,13 @@ export default function Home() {
           <div className="truth-intro">
             <span className="kicker">Mystery toy. Verified story.</span>
             <h2>The internet moves fast.<br/>We’d rather get it right.</h2>
-            <p>The first three figures are about the wider online information ecosystem, not wildlife content on its own. We added them because conservation stories spread through the same feeds, creators, and popularity signals as everything else, so the same cracks show up.</p>
+            <p>Social media can turn a strange animal into a star overnight. It can also turn a protected species into a prop, or a wild encounter into a trend other people try to copy. The figures here track that gap between attention and accuracy.</p>
             <div className="truth-rule"><span>WILDKIN RULE 01</span><b>Hide the plush. Never hide the source.</b></div>
           </div>
           <div className="stat-grid">
-            <article><strong>62%</strong><p>of surveyed digital content creators said they do not systematically verify information before sharing.</p><a href="https://www.unesco.org/en/articles/2/3-digital-content-creators-do-not-check-their-facts-sharing-want-learn-how-do-so-unesco-survey?hub=686" target="_blank" rel="noreferrer">UNESCO, 2024 <Icon name="arrow" /></a></article>
-            <article><strong>42%</strong><p>used likes and views as their primary signal for judging the credibility of online content.</p><a href="https://www.unesco.org/en/digital-content-creators?hub=804" target="_blank" rel="noreferrer">UNESCO, 2024 <Icon name="arrow" /></a></article>
-            <article><strong>85%</strong><p>of citizens surveyed across 16 countries were concerned about online disinformation’s impact.</p><a href="https://www.unesco.org/sites/default/files/medias/fichiers/2023/11/unesco_ipsos_survey_1.pdf?hub=779" target="_blank" rel="noreferrer">UNESCO / Ipsos, 2023 <Icon name="arrow" /></a></article>
+            <article><strong>292%</strong><p>rise in wildlife selfies posted on Instagram from 2014 to 2017. About 4 in 10 showed someone holding, hugging, or otherwise handling a wild animal.</p><a href="https://www.newswire.ca/news-releases/iconic-wild-animals-suffering-for-selfies-649260263.html" target="_blank" rel="noreferrer">World Animal Protection, 2017 <Icon name="arrow" /></a></article>
+            <article><strong>4%</strong><p>of the roughly 14,000 tweets about one viral lemur video said the poster wanted a pet lemur, a species it is illegal to keep as a pet in most of the US.</p><a href="https://doi.org/10.1371/journal.pone.0208577" target="_blank" rel="noreferrer">PLOS ONE, 2019 <Icon name="arrow" /></a></article>
+            <article><strong>&lt;10%</strong><p>of the roughly 2 million known species on Earth have ever been formally assessed for extinction risk, so for most animals, their status is still an open question.</p><a href="https://www.iucnredlist.org/resources/summary-statistics" target="_blank" rel="noreferrer">IUCN Red List <Icon name="arrow" /></a></article>
             <article className="biodiversity-stat"><strong>≈1M</strong><p>animal and plant species face extinction, which is exactly why clear, sourced biodiversity information matters.</p><a href="https://www.ipbes.net/system/files/2021-06/2020%20IPBES%20GLOBAL%20REPORT%20%28CHAPTER%202.2%29_V3_SINGLE_0.pdf" target="_blank" rel="noreferrer">IPBES Global Assessment <Icon name="arrow" /></a></article>
           </div>
         </div>
