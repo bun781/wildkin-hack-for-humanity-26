@@ -192,7 +192,7 @@ export default function Home() {
           <div className="hero-content">
             <span className="eyebrow"><Icon name="leaf" /> Habitat series · drop 01</span>
             <h1>Ugly by nature.<br/><em>Hidden by design.</em></h1>
-            <p>Pick a habitat, crack a blind box, and meet one magnificently strange animal. The plush is a surprise. The conservation facts are not.</p>
+            <p>Pick a habitat, open a blind box, and own a magnificently strange animal. The plush is a surprise. The efforts for conservation are not.</p>
             <div className="hero-actions">
               <a className="button primary" href="#blind-boxes">Choose a blind box <Icon name="arrow" /></a>
               <a className="text-link" href="#shop">See possible pulls</a>
