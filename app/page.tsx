@@ -163,7 +163,7 @@ export default function Home() {
       return;
     }
     setSelectedAnimal(record);
-    setLookupMessage(`${record.name} found — map pin updated.`);
+    setLookupMessage(`${record.name} found. Map pin updated.`);
     window.setTimeout(() => document.getElementById("origin-map")?.scrollIntoView({ behavior: "smooth", block: "center" }), 80);
   };
 
@@ -291,7 +291,7 @@ export default function Home() {
         </div>
         <div className="wildlife-heading">
           <div><span className="kicker">Wildlife reference board</span><h2>Four more wonderfully strange originals</h2></div>
-          <p>These are real-animal photographs, kept separate from the finished plush concepts so every future design starts with the species—not a generic cartoon silhouette.</p>
+          <p>These are real-animal photographs, kept separate from the finished plush concepts, so every future design starts with the species instead of a generic cartoon silhouette.</p>
         </div>
         <div className="wildlife-grid">
           {wildlifeReferences.map((animal) => (
@@ -330,15 +330,15 @@ export default function Home() {
         <div className="shell truth-layout">
           <div className="truth-intro">
             <span className="kicker">Mystery toy. Verified story.</span>
-            <h2>The internet is loud.<br/>Facts need backup.</h2>
-            <p>The first three figures describe the wider online information ecosystem—not wildlife content specifically. We include them because conservation stories travel through the same feeds, creators, and popularity signals.</p>
+            <h2>The internet moves fast.<br/>We’d rather get it right.</h2>
+            <p>The first three figures are about the wider online information ecosystem, not wildlife content on its own. We added them because conservation stories spread through the same feeds, creators, and popularity signals as everything else, so the same cracks show up.</p>
             <div className="truth-rule"><span>WILDKIN RULE 01</span><b>Hide the plush. Never hide the source.</b></div>
           </div>
           <div className="stat-grid">
             <article><strong>62%</strong><p>of surveyed digital content creators said they do not systematically verify information before sharing.</p><a href="https://www.unesco.org/en/articles/2/3-digital-content-creators-do-not-check-their-facts-sharing-want-learn-how-do-so-unesco-survey?hub=686" target="_blank" rel="noreferrer">UNESCO, 2024 <Icon name="arrow" /></a></article>
             <article><strong>42%</strong><p>used likes and views as their primary signal for judging the credibility of online content.</p><a href="https://www.unesco.org/en/digital-content-creators?hub=804" target="_blank" rel="noreferrer">UNESCO, 2024 <Icon name="arrow" /></a></article>
             <article><strong>85%</strong><p>of citizens surveyed across 16 countries were concerned about online disinformation’s impact.</p><a href="https://www.unesco.org/sites/default/files/medias/fichiers/2023/11/unesco_ipsos_survey_1.pdf?hub=779" target="_blank" rel="noreferrer">UNESCO / Ipsos, 2023 <Icon name="arrow" /></a></article>
-            <article className="biodiversity-stat"><strong>≈1M</strong><p>animal and plant species face extinction—making clear, sourced biodiversity information matter.</p><a href="https://www.ipbes.net/system/files/2021-06/2020%20IPBES%20GLOBAL%20REPORT%20%28CHAPTER%202.2%29_V3_SINGLE_0.pdf" target="_blank" rel="noreferrer">IPBES Global Assessment <Icon name="arrow" /></a></article>
+            <article className="biodiversity-stat"><strong>≈1M</strong><p>animal and plant species face extinction, which is exactly why clear, sourced biodiversity information matters.</p><a href="https://www.ipbes.net/system/files/2021-06/2020%20IPBES%20GLOBAL%20REPORT%20%28CHAPTER%202.2%29_V3_SINGLE_0.pdf" target="_blank" rel="noreferrer">IPBES Global Assessment <Icon name="arrow" /></a></article>
           </div>
         </div>
         <div className="shell fact-check-strip"><span><b>MYTH</b> Weird animals are less worth saving.</span><span><b>CHECK</b> Find the original source.</span><span><b>SHARE</b> Lead with evidence, not virality.</span></div>
@@ -350,7 +350,7 @@ export default function Home() {
           <div className="lookup-status" role="status"><span className={lookupMessage.startsWith("We") ? "status-dot error" : "status-dot"}/>{lookupMessage}</div>
         </div>
         <div className="shell map-layout">
-          <OriginMap animals={animalRecords} selectedCode={selectedAnimal.code} onSelect={(code) => { const animal = animalRecords.find((record) => record.code === code); if (!animal) return; setSelectedAnimal(animal); setAnimalCode(animal.code); setLookupMessage(`${animal.name} selected — ${animal.place}.`); }} />
+          <OriginMap animals={animalRecords} selectedCode={selectedAnimal.code} onSelect={(code) => { const animal = animalRecords.find((record) => record.code === code); if (!animal) return; setSelectedAnimal(animal); setAnimalCode(animal.code); setLookupMessage(`${animal.name} selected. Now showing ${animal.place}.`); }} />
           <aside className="origin-card" style={{ borderColor: selectedAnimal.color }}>
             <div className="origin-code"><span>SPECIMEN ID</span><b>{selectedAnimal.code}</b></div>
             <div className="origin-plush" style={{ background: selectedAnimal.color }}><Image src={selectedAnimal.image} alt={`${selectedAnimal.species} plush toy`} fill sizes="92px" /></div>
@@ -369,7 +369,7 @@ export default function Home() {
           <div className="creature-copy">
             <span className="kicker">Plush specimen · Thymichthys politus</span>
             <h2>Meet the red handfish.<br/>Strange is worth saving.</h2>
-            <p>It has a face only the seafloor could love—and fins shaped like tiny hands. This exceptionally rare Tasmanian fish walks more than it swims, making it the perfect ambassador for overlooked wildlife.</p>
+            <p>It has a face only the seafloor could love, with fins shaped like tiny hands. This exceptionally rare Tasmanian fish walks more than it swims, making it the perfect ambassador for overlooked wildlife.</p>
             <div className="creature-facts"><div><span>Habitat</span><b>Shallow Tasmanian reefs</b></div><div><span>Status</span><b>Critically endangered</b></div><div><span>Odd talent</span><b>Walking on its fins</b></div></div>
             <p className="drag-note">Designed with a compact body, padded walking fins, embroidered markings, simple felt teeth, and factory-friendly seam placement.</p>
           </div>
