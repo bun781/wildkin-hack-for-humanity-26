@@ -1,4 +1,4 @@
-# Wildkin storefront template
+# Oddkin storefront template
 
 A responsive Next.js storefront concept for collectible endangered-species plushies. It is ready to deploy on Vercel and intentionally uses image placeholders so real listing photography can be added later.
 
@@ -21,9 +21,9 @@ Open `http://localhost:3000`.
 
 ## Deploy to Vercel
 
-1. Push the `wildkin` folder to a Git repository.
+1. Push this project to a Git repository.
 2. Import the repository in Vercel.
-3. If this folder remains in a larger repository, set the Vercel Root Directory to `wildkin`.
+3. If this project lives inside a larger repository, set the Vercel Root Directory to its folder.
 4. Keep the detected framework as Next.js and deploy.
 
 The cart, filters, favorites, mobile navigation, and newsletter success state are front-end demo interactions. Connect them to your preferred commerce and email providers when the real catalog is ready.

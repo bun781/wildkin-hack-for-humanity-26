@@ -133,12 +133,12 @@ type AnimalRecord = {
 };
 
 const animalRecords: AnimalRecord[] = [
-  { code: "WK-REDSY-104", name: "Redsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/plushies/red-handfish-neutral.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
-  { code: "WK-MOSS-208", name: "Moss", species: "Kākāpō", place: "Whenua Hou, Aotearoa New Zealand", habitat: "Predator-free island forest", image: "/plushies/kakapo-neutral.png", lat: -46.77, lng: 167.64, marker: "KP", color: "#476f2e" },
-  { code: "WK-WRINKLE-311", name: "Wrinkle", species: "Chinese giant salamander", place: "Central and southern China", habitat: "Cool, fast-flowing mountain rivers", image: "/plushies/chinese-giant-salamander-neutral.png", lat: 30.55, lng: 110.48, marker: "GS", color: "#584636" },
-  { code: "WK-FLAP-419", name: "Flap", species: "Dumbo octopus", place: "North Atlantic deep sea", habitat: "Cold abyssal plains, roughly 3,000–4,000 m deep", image: "/plushies/dumbo-octopus-ugly.png", lat: 38.2, lng: -31.1, marker: "DO", color: "#164f74" },
-  { code: "WK-TRUFFLE-526", name: "Truffle", species: "Purple frog", place: "Western Ghats, India", habitat: "Underground in tropical forest soil", image: "/plushies/purple-frog-ugly.png", lat: 10.18, lng: 76.5, marker: "PF", color: "#4d2b50" },
-  { code: "WK-KNUCKLES-637", name: "Knuckles", species: "Aye-aye", place: "Eastern Madagascar", habitat: "Tropical rainforest canopy", image: "/plushies/aye-aye-ugly.png", lat: -18.8, lng: 48.45, marker: "AA", color: "#3d362f" },
+  { code: "OD-REDSY-104", name: "Redsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/plushies/red-handfish-neutral.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
+  { code: "OD-MOSS-208", name: "Moss", species: "Kākāpō", place: "Whenua Hou, Aotearoa New Zealand", habitat: "Predator-free island forest", image: "/plushies/kakapo-neutral.png", lat: -46.77, lng: 167.64, marker: "KP", color: "#476f2e" },
+  { code: "OD-WRINKLE-311", name: "Wrinkle", species: "Chinese giant salamander", place: "Central and southern China", habitat: "Cool, fast-flowing mountain rivers", image: "/plushies/chinese-giant-salamander-neutral.png", lat: 30.55, lng: 110.48, marker: "GS", color: "#584636" },
+  { code: "OD-FLAP-419", name: "Flap", species: "Dumbo octopus", place: "North Atlantic deep sea", habitat: "Cold abyssal plains, roughly 3,000–4,000 m deep", image: "/plushies/dumbo-octopus-ugly.png", lat: 38.2, lng: -31.1, marker: "DO", color: "#164f74" },
+  { code: "OD-TRUFFLE-526", name: "Truffle", species: "Purple frog", place: "Western Ghats, India", habitat: "Underground in tropical forest soil", image: "/plushies/purple-frog-ugly.png", lat: 10.18, lng: 76.5, marker: "PF", color: "#4d2b50" },
+  { code: "OD-KNUCKLES-637", name: "Knuckles", species: "Aye-aye", place: "Eastern Madagascar", habitat: "Tropical rainforest canopy", image: "/plushies/aye-aye-ugly.png", lat: -18.8, lng: 48.45, marker: "AA", color: "#3d362f" },
 ];
 
 function TrackerForm({ code, setCode, onSubmit, compact = false }: { code: string; setCode: (value: string) => void; onSubmit: (event: React.FormEvent<HTMLFormElement>) => void; compact?: boolean }) {
@@ -146,7 +146,7 @@ function TrackerForm({ code, setCode, onSubmit, compact = false }: { code: strin
     <form className={`tracker-form ${compact ? "compact" : ""}`} onSubmit={onSubmit}>
       <label htmlFor={compact ? "animal-id-bottom" : "animal-id-top"}>{compact ? "Enter your animal or mystery-box ID" : "Already adopted? Find your animal"}</label>
       <div>
-        <input id={compact ? "animal-id-bottom" : "animal-id-top"} value={code} onChange={(event) => setCode(event.target.value.toUpperCase())} placeholder="Try WK-REDSY-104" aria-label="Animal ID" autoCapitalize="characters" autoCorrect="off" autoComplete="off" spellCheck={false} enterKeyHint="search" />
+        <input id={compact ? "animal-id-bottom" : "animal-id-top"} value={code} onChange={(event) => setCode(event.target.value.toUpperCase())} placeholder="Try OD-REDSY-104" aria-label="Animal ID" autoCapitalize="characters" autoCorrect="off" autoComplete="off" spellCheck={false} enterKeyHint="search" />
         <button type="submit">Find origin <Icon name="arrow" /></button>
       </div>
     </form>
@@ -222,7 +222,7 @@ export default function Home() {
       <div className="announcement"><span>Habitat blind boxes are open</span><span>•</span><span>Every box ships with a myth-busting species card</span></div>
       <header className="nav-wrap">
         <nav className="nav shell" aria-label="Main navigation">
-          <a className="logo" href="#top" aria-label="Wildkin home"><span className="logo-mark">W</span> wildkin</a>
+          <a className="logo" href="#top" aria-label="Oddkin home"><span className="logo-mark">O</span> oddkin</a>
           <div id="main-menu" className={`nav-links ${menuOpen ? "open" : ""}`}>
             <a href="#blind-boxes" onClick={() => setMenuOpen(false)}>Blind boxes</a>
             <a href="#shop" onClick={() => setMenuOpen(false)}>Meet the pulls</a>
@@ -263,7 +263,7 @@ export default function Home() {
                 <figcaption><b>{card.name}</b><small>{card.species}</small></figcaption>
               </figure>
             ))}
-            <div className="hero-blind-box" aria-hidden="true"><BoxScene id="ocean" /><span>WILDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat blind box · 01</small></div>
+            <div className="hero-blind-box" aria-hidden="true"><BoxScene id="ocean" /><span>ODDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat blind box · 01</small></div>
           </div>
         </div>
       </section>
@@ -294,7 +294,7 @@ export default function Home() {
                 <span className="box-object" aria-hidden="true">
                   <span className="box-top" />
                   <span className="box-side" />
-                  <span className="box-front"><BoxScene id={box.id as "ocean" | "forest" | "hidden"} /><small>WILDKIN</small><b>{box.name}</b><em>HABITAT BLIND BOX</em></span>
+                  <span className="box-front"><BoxScene id={box.id as "ocean" | "forest" | "hidden"} /><small>ODDKIN</small><b>{box.name}</b><em>HABITAT BLIND BOX</em></span>
                   {boxAnimal && <span className="box-peek"><Image src={boxAnimal.image} alt="" fill sizes="110px" /></span>}
                 </span>
                 <span className="box-copy"><small>{box.habitat}</small><b>{box.name}</b><span>{box.copy}</span>{boxAnimal && <span className="box-inside"><i>Example pull</i> {boxAnimal.name} · {boxAnimal.species}</span>}</span>
@@ -397,7 +397,7 @@ export default function Home() {
           <div className="impact-copy">
             <span className="kicker light">Soft on you. Gentle on Earth.</span>
             <h2>A cuddle with a conservation story.</h2>
-            <p>Wildkin turns curiosity into care. Every friend introduces its real-life species, its wild home, and one simple action your family can take.</p>
+            <p>Oddkin turns curiosity into care. Every friend introduces its real-life species, its wild home, and one simple action your family can take.</p>
             <div className="impact-list">
               <div><span>01</span><p><b>Pick a habitat</b>Choose the blind box that matches the wild home you love.</p></div>
               <div><span>02</span><p><b>Unlock their story</b>Scan the keepsake card for facts and activities.</p></div>
@@ -466,7 +466,7 @@ export default function Home() {
       </section>
 
       <section className="donation-section" id="donate">
-        <div className="shell donation-heading"><div><span className="kicker light">Direct support, no middleman</span><h2>Help the real animals,<br/>not just the plush ones.</h2></div><p>Wildkin does not collect these donations. Each button opens the conservation program’s own secure donation page so you can see exactly who receives your support.</p></div>
+        <div className="shell donation-heading"><div><span className="kicker light">Direct support, no middleman</span><h2>Help the real animals,<br/>not just the plush ones.</h2></div><p>Oddkin does not collect these donations. Each button opens the conservation program’s own secure donation page so you can see exactly who receives your support.</p></div>
         <div className="shell donation-grid">
           <article><div className="donation-plush"><Image src="/plushies/red-handfish-neutral.png" alt="Red handfish plush" fill sizes="160px" /></div><span>Australia · marine recovery</span><h3>Handfish Conservation Project</h3><p>Support surveys, habitat restoration, captive breeding, and reintroduction for Tasmania’s rare handfish.</p><a href="https://handfish.org.au/donate/" target="_blank" rel="noreferrer">Donate to handfish <Icon name="arrow"/></a></article>
           <article><div className="donation-plush"><Image src="/plushies/kakapo-neutral.png" alt="Kākāpō plush" fill sizes="160px" /></div><span>Aotearoa New Zealand · species recovery</span><h3>Kākāpō Recovery</h3><p>Fund monitoring, research, health checks, predator control, and management of breeding seasons.</p><a href="https://www.doc.govt.nz/kakapo-donate" target="_blank" rel="noreferrer">Donate to kākāpō <Icon name="arrow"/></a></article>
@@ -476,7 +476,7 @@ export default function Home() {
 
       <section className="passport-section shell" id="passport">
         <div className="passport-visual">
-          <div className="passport-cover"><span>WILDKIN</span><b>FIELD<br/>PASSPORT</b><i><Image src="/plushies/red-handfish-neutral.png" alt="" fill sizes="64px" /></i><small>Junior conservation club</small></div>
+          <div className="passport-cover"><span>ODDKIN</span><b>FIELD<br/>PASSPORT</b><i><Image src="/plushies/red-handfish-neutral.png" alt="" fill sizes="64px" /></i><small>Junior conservation club</small></div>
           <div className="passport-page"><span>SPECIES SIGHTINGS</span><div className="stamp-grid">{products.slice(0,4).map((p) => <div key={p.id}><i><Image src={p.image} alt="" fill sizes="34px" /></i><small>{p.species}</small></div>)}</div></div>
         </div>
         <div className="passport-copy">
@@ -501,8 +501,8 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="shell footer-grid"><div><a className="logo footer-logo" href="#top"><span className="logo-mark">W</span> wildkin</a><p>Plushies with a purpose.<br/>Made for soft hearts and wild minds.</p></div><div><b>Explore</b><a href="#shop">Shop all</a><a href="#passport">Collector’s club</a></div><div><b>Help</b><a href="#top">Shipping & returns</a><a href="#top">Care guide</a><a href="#top">Contact</a></div><div><b>Our promise</b><a href="#how">Giving back</a><a href="#how">Materials</a><a href="#how">Conservation</a></div></div>
-        <div className="shell footer-bottom"><span>© 2026 Wildkin. Concept storefront.</span><span>Made with care for the wonderfully wild.</span></div>
+        <div className="shell footer-grid"><div><a className="logo footer-logo" href="#top"><span className="logo-mark">O</span> oddkin</a><p>Plushies with a purpose.<br/>Made for soft hearts and wild minds.</p></div><div><b>Explore</b><a href="#shop">Shop all</a><a href="#passport">Collector’s club</a></div><div><b>Help</b><a href="#top">Shipping & returns</a><a href="#top">Care guide</a><a href="#top">Contact</a></div><div><b>Our promise</b><a href="#how">Giving back</a><a href="#how">Materials</a><a href="#how">Conservation</a></div></div>
+        <div className="shell footer-bottom"><span>© 2026 Oddkin. Concept storefront.</span><span>Made with care for the wonderfully wild.</span></div>
       </footer>
 
       {cartOpen && <><button className="drawer-backdrop" aria-label="Close cart" onClick={() => setCartOpen(false)}/><aside className="cart-drawer" aria-label="Shopping bag"><div className="drawer-title"><div><span>Your field bag</span><h2>{cart.length ? `${cart.length} blind box${cart.length > 1 ? "es" : ""}` : "Ready for an adventure"}</h2></div><button className="icon-button" onClick={() => setCartOpen(false)} aria-label="Close cart"><Icon name="close" /></button></div>{cart.length === 0 ? <div className="empty-cart"><span><Icon name="leaf"/></span><h3>Your bag is feeling light</h3><p>Pick a habitat blind box and a mystery friend will travel home with you.</p><button className="button dark" onClick={() => { setCartOpen(false); document.getElementById("blind-boxes")?.scrollIntoView({ behavior: "smooth" }); }}>Choose a blind box</button></div> : <><div className="cart-items">{cart.map((item, index) => <div className="cart-item" key={`${item.id}-${index}`}><span className="cart-box" style={{background:item.color}} aria-hidden="true">{item.glyph}</span><div><small>Mystery plush inside</small><b>{item.name} box</b><button onClick={() => setCart(items => items.filter((_, i) => i !== index))}>Remove</button></div><strong>${BLIND_BOX_PRICE}</strong></div>)}</div><div className="cart-summary"><div><span>Subtotal</span><b>${total}</b></div><small>Shipping calculated at checkout. 100% supports wildlife.</small><button className="checkout">Checkout · ${total}</button></div></>}</aside></>}

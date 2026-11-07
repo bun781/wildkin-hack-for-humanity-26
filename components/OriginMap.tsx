@@ -31,8 +31,8 @@ function FollowSelection({ animal }: { animal: MapAnimal }) {
 
 function markerIcon(animal: MapAnimal, active: boolean) {
   return L.divIcon({
-    className: "wildkin-map-marker-wrap",
-    html: `<span class="wildkin-map-marker${active ? " active" : ""}" style="--marker-color:${animal.color}"><i>${animal.marker}</i><b></b></span>`,
+    className: "oddkin-map-marker-wrap",
+    html: `<span class="oddkin-map-marker${active ? " active" : ""}" style="--marker-color:${animal.color}"><i>${animal.marker}</i><b></b></span>`,
     iconSize: active ? [58, 68] : [46, 56],
     iconAnchor: active ? [29, 60] : [23, 49],
     popupAnchor: [0, active ? -61 : -49],

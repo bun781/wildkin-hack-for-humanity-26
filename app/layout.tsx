@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Wildkin: Plushies with a purpose",
+  title: "Oddkin: Plushies with a purpose",
   description: "Collect lovable endangered-species plushies and help protect their wild homes.",
 };
 

@@ -293,12 +293,12 @@ a.add-button { min-height: 48px; padding: 12px 0; }
 .open-street-map .leaflet-bar a { border: 1px solid #214d3d; background: #f7f8f4; color: #173f35; }
 .open-street-map .leaflet-bar a:hover { background: #9ec23b; color: #173f35; }
 .map-loading { display: grid; place-items: center; color: white; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.wildkin-map-marker-wrap { background: transparent !important; border: 0 !important; }
-.wildkin-map-marker { position: relative; width: 46px; height: 46px; display: grid; place-items: center; border: 3px solid #f7f8f4; border-radius: 50% 50% 50% 4px; background: var(--marker-color); color: white; rotate: -45deg; transition: width .2s, height .2s; }
-.wildkin-map-marker i { rotate: 45deg; font-size: 10px; font-style: normal; font-weight: 950; letter-spacing: .04em; }
-.wildkin-map-marker b { position: absolute; inset: -9px; border: 1px solid transparent; border-radius: 50%; }
-.wildkin-map-marker.active { width: 58px; height: 58px; border-width: 4px; }
-.wildkin-map-marker.active b { border-color: #f7f8f4; animation: mapPulse 1.8s infinite; }
+.oddkin-map-marker-wrap { background: transparent !important; border: 0 !important; }
+.oddkin-map-marker { position: relative; width: 46px; height: 46px; display: grid; place-items: center; border: 3px solid #f7f8f4; border-radius: 50% 50% 50% 4px; background: var(--marker-color); color: white; rotate: -45deg; transition: width .2s, height .2s; }
+.oddkin-map-marker i { rotate: 45deg; font-size: 10px; font-style: normal; font-weight: 950; letter-spacing: .04em; }
+.oddkin-map-marker b { position: absolute; inset: -9px; border: 1px solid transparent; border-radius: 50%; }
+.oddkin-map-marker.active { width: 58px; height: 58px; border-width: 4px; }
+.oddkin-map-marker.active b { border-color: #f7f8f4; animation: mapPulse 1.8s infinite; }
 .map-corner-label { position: absolute; z-index: 600; left: 22px; top: 22px; max-width: 260px; padding: 12px 15px; background: #0d382b; color: white; border-left: 4px solid var(--lime); pointer-events: none; }
 .map-corner-label span, .map-corner-label b { display: block; }
 .map-corner-label span { color: var(--lime); font-size: 8px; font-weight: 900; letter-spacing: .18em; }
