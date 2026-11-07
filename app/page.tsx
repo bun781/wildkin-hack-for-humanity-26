@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import OriginMap from "../components/OriginMapLoader";
+import BoxScene from "../components/BoxScene";
 
 type Product = {
   id: number;
@@ -262,7 +263,7 @@ export default function Home() {
                 <figcaption><b>{card.name}</b><small>{card.species}</small></figcaption>
               </figure>
             ))}
-            <div className="hero-blind-box" aria-hidden="true"><span>WILDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat blind box · 01</small></div>
+            <div className="hero-blind-box" aria-hidden="true"><BoxScene id="ocean" /><span>WILDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat blind box · 01</small></div>
           </div>
         </div>
       </section>
@@ -293,7 +294,7 @@ export default function Home() {
                 <span className="box-object" aria-hidden="true">
                   <span className="box-top" />
                   <span className="box-side" />
-                  <span className="box-front"><small>WILDKIN</small><b>{box.name}</b><i>{box.glyph}</i><em>HABITAT BLIND BOX</em></span>
+                  <span className="box-front"><BoxScene id={box.id as "ocean" | "forest" | "hidden"} /><small>WILDKIN</small><b>{box.name}</b><em>HABITAT BLIND BOX</em></span>
                   {boxAnimal && <span className="box-peek"><Image src={boxAnimal.image} alt="" fill sizes="110px" /></span>}
                 </span>
                 <span className="box-copy"><small>{box.habitat}</small><b>{box.name}</b><span>{box.copy}</span>{boxAnimal && <span className="box-inside"><i>Example pull</i> {boxAnimal.name} · {boxAnimal.species}</span>}</span>
