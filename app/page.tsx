@@ -18,13 +18,13 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 1, name: "Handsy", species: "Red handfish", region: "Oceania", rarity: "Critically endangered", image: "/plushies/red-handfish-neutral.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
+  { id: 1, name: "Redsy", species: "Red handfish", region: "Oceania", rarity: "Critically endangered", image: "/plushies/red-handfish-neutral.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
   { id: 2, name: "Moss", species: "Kākāpō", region: "Oceania", rarity: "Critically endangered", image: "/plushies/kakapo-neutral.png", color: "#476f2e", accent: "#ffffff", fact: "Kākāpō are the world’s only flightless, nocturnal parrots.", badge: "New" },
   { id: 3, name: "Wrinkle", species: "Chinese giant salamander", region: "Asia", rarity: "Critically endangered", image: "/plushies/chinese-giant-salamander-neutral.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
 ];
 
 const heroCards = [
-  { name: "Handsy", species: "Red handfish", plush: "/plushies/red-handfish-neutral.png", wild: "/references/red-handfish-wild.jpg" },
+  { name: "Redsy", species: "Red handfish", plush: "/plushies/red-handfish-neutral.png", wild: "/references/red-handfish-wild.jpg" },
   { name: "Moss", species: "Kākāpō", plush: "/plushies/kakapo-neutral.png", wild: "/references/kakapo-wild.jpg" },
   { name: "Wrinkle", species: "Chinese giant salamander", plush: "/plushies/chinese-giant-salamander-neutral.png", wild: "/references/chinese-giant-salamander-wild.jpg" },
 ];
@@ -84,7 +84,7 @@ type AnimalRecord = {
 };
 
 const animalRecords: AnimalRecord[] = [
-  { code: "WK-HANDSY-104", name: "Handsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/plushies/red-handfish-neutral.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
+  { code: "WK-REDSY-104", name: "Redsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/plushies/red-handfish-neutral.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
   { code: "WK-MOSS-208", name: "Moss", species: "Kākāpō", place: "Whenua Hou, Aotearoa New Zealand", habitat: "Predator-free island forest", image: "/plushies/kakapo-neutral.png", lat: -46.77, lng: 167.64, marker: "KP", color: "#476f2e" },
   { code: "WK-WRINKLE-311", name: "Wrinkle", species: "Chinese giant salamander", place: "Central and southern China", habitat: "Cool, fast-flowing mountain rivers", image: "/plushies/chinese-giant-salamander-neutral.png", lat: 30.55, lng: 110.48, marker: "GS", color: "#584636" },
   { code: "WK-FLAP-419", name: "Flap", species: "Dumbo octopus", place: "North Atlantic deep sea", habitat: "Cold abyssal plains, roughly 3,000–4,000 m deep", image: "/plushies/dumbo-octopus-ugly.png", lat: 38.2, lng: -31.1, marker: "DO", color: "#164f74" },
@@ -97,7 +97,7 @@ function TrackerForm({ code, setCode, onSubmit, compact = false }: { code: strin
     <form className={`tracker-form ${compact ? "compact" : ""}`} onSubmit={onSubmit}>
       <label htmlFor={compact ? "animal-id-bottom" : "animal-id-top"}>{compact ? "Enter your animal or mystery-box ID" : "Already adopted? Find your animal"}</label>
       <div>
-        <input id={compact ? "animal-id-bottom" : "animal-id-top"} value={code} onChange={(event) => setCode(event.target.value.toUpperCase())} placeholder="Try WK-HANDSY-104" aria-label="Animal ID" autoCapitalize="characters" autoCorrect="off" autoComplete="off" spellCheck={false} enterKeyHint="search" />
+        <input id={compact ? "animal-id-bottom" : "animal-id-top"} value={code} onChange={(event) => setCode(event.target.value.toUpperCase())} placeholder="Try WK-REDSY-104" aria-label="Animal ID" autoCapitalize="characters" autoCorrect="off" autoComplete="off" spellCheck={false} enterKeyHint="search" />
         <button type="submit">Find origin <Icon name="arrow" /></button>
       </div>
     </form>
