@@ -417,7 +417,6 @@ export default function Home() {
           <div className="truth-intro">
             <span className="kicker">Mystery toy. Verified story.</span>
             <h2>The internet moves fast.<br/>We’d rather get it right.</h2>
-            <p>Social media can turn a strange animal into a star overnight. It can also turn a protected species into a prop, or a wild encounter into a trend other people try to copy. The figures here track that gap between attention and accuracy.</p>
             <dl className="truth-define">
               <div><dt>Misinformation</dt><dd>False information shared by mistake, like passing along an AI-made animal video that looks real.</dd></div>
               <div><dt>Disinformation</dt><dd>False information spread on purpose, like selling wild-caught animals as captive-bred.</dd></div>
