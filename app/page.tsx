@@ -263,7 +263,6 @@ export default function Home() {
               </figure>
             ))}
             <div className="hero-blind-box" aria-hidden="true"><span>WILDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat blind box · 01</small></div>
-            <div className="photo-note"><b>You do not choose the face.</b><span>The face chooses you.</span></div>
           </div>
         </div>
       </section>
