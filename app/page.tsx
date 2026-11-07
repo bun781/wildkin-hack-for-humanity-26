@@ -35,6 +35,54 @@ const BLIND_BOX_PRICE = 36;
 
 const filters = ["All", "Oceania", "Asia"];
 
+type MythCheck = {
+  id: string;
+  animal: string;
+  image: string;
+  color: string;
+  claim: string;
+  verdict: string;
+  fact: string;
+  source: string;
+  url: string;
+};
+
+const mythChecks: MythCheck[] = [
+  {
+    id: "handfish",
+    animal: "Red handfish",
+    image: "/plushies/red-handfish-neutral.png",
+    color: "#9f352d",
+    claim: "A fish this strange must be common somewhere.",
+    verdict: "False",
+    fact: "Red handfish live on just two small patches of reef in southeast Tasmania. A 2020 survey estimated about 101 adults in total.",
+    source: "Journal of Fish Biology, 2024",
+    url: "https://reeflifesurvey.com/publications/population-parameters-and-conservation-implications-for-one-of-the-worlds-rarest-marine-fishes-the-red-handfish-thymichthys-politus/",
+  },
+  {
+    id: "kakapo",
+    animal: "Kākāpō",
+    image: "/plushies/kakapo-neutral.png",
+    color: "#476f2e",
+    claim: "A parrot that cannot fly is a lost cause.",
+    verdict: "False",
+    fact: "The kākāpō count fell to 51 birds in 1995. Intensive, hands-on conservation has since lifted the official population to 325.",
+    source: "NZ Department of Conservation, 2026",
+    url: "https://www.doc.govt.nz/news/media-releases/2026-media-releases/kakapo-population-reaches-new-milestone/",
+  },
+  {
+    id: "salamander",
+    animal: "Chinese giant salamander",
+    image: "/plushies/chinese-giant-salamander-neutral.png",
+    color: "#584636",
+    claim: "Millions are farmed in China, so the species is safe.",
+    verdict: "Misleading",
+    fact: "Farms hold millions, but a four-year survey of 97 sites found only 24 wild individuals, and those may be escaped or released farm animals. The species is critically endangered.",
+    source: "Turvey et al., Current Biology, 2018",
+    url: "https://news.mongabay.com/2018/05/chinese-giant-salamander-is-at-least-five-species-all-nearly-extinct/",
+  },
+];
+
 type WildlifeReference = {
   name: string;
   scientificName: string;
@@ -127,6 +175,7 @@ export default function Home() {
   const [selectedBoxId, setSelectedBoxId] = useState(habitatBoxes[0].id);
   const [revealedProduct, setRevealedProduct] = useState<Product | null>(null);
   const [animalCode, setAnimalCode] = useState("");
+  const [openMyths, setOpenMyths] = useState<string[]>([]);
   const [selectedAnimal, setSelectedAnimal] = useState<AnimalRecord>(animalRecords[0]);
   const [lookupMessage, setLookupMessage] = useState("Try a sample ID to reveal its home.");
   const visibleProducts = useMemo(() => filter === "All" ? products : products.filter((p) => p.region === filter), [filter]);
@@ -169,13 +218,14 @@ export default function Home() {
 
   return (
     <main>
-      <div className="announcement"><span>Habitat blind boxes are open</span><span>•</span><span>Every pull includes a fact-checked species card</span></div>
+      <div className="announcement"><span>Habitat blind boxes are open</span><span>•</span><span>Every box ships with a myth-busting species card</span></div>
       <header className="nav-wrap">
         <nav className="nav shell" aria-label="Main navigation">
           <a className="logo" href="#top" aria-label="Wildkin home"><span className="logo-mark">W</span> wildkin</a>
           <div id="main-menu" className={`nav-links ${menuOpen ? "open" : ""}`}>
             <a href="#blind-boxes" onClick={() => setMenuOpen(false)}>Blind boxes</a>
             <a href="#shop" onClick={() => setMenuOpen(false)}>Meet the pulls</a>
+            <a href="#myths" onClick={() => setMenuOpen(false)}>Spot the myth</a>
             <a href="#how" onClick={() => setMenuOpen(false)}>How it helps</a>
             <a href="#passport" onClick={() => setMenuOpen(false)}>Collector’s club</a>
             <a href="#origin-map" onClick={() => setMenuOpen(false)}>Track your friend</a>
@@ -219,14 +269,14 @@ export default function Home() {
       </section>
 
       <section className="ticker" aria-label="Brand qualities">
-        {['Habitat blind boxes','Fact-checked species cards','One strange pull inside','Secret colorway odds'].map((item) => <span key={item}>{item}<i>✿</i></span>)}
+        {['Habitat blind boxes','Myth-busting species cards','One strange pull inside','Every claim has a source'].map((item) => <span key={item}>{item}<i>✿</i></span>)}
       </section>
 
       <section className="blind-box-section" id="blind-boxes">
         <div className="shell">
           <div className="section-heading split blind-box-heading">
             <div><span className="kicker light">Choose your ecosystem</span><h2>Three habitats.<br/>Zero normal faces.</h2></div>
-            <p>Each solid-cardboard box is themed to the animals’ wild homes. The seal carries the ID you can enter on the map after opening.</p>
+            <p>Each solid-cardboard box is themed to the animals’ wild homes. The seal carries the ID you can enter on the map after opening. Inside, a card busts one common myth about the animal.</p>
           </div>
           <div className="box-grid">
             {habitatBoxes.map((box, index) => {
@@ -306,6 +356,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="myth-section" id="myths">
+        <div className="shell">
+          <div className="section-heading split">
+            <div><span className="kicker">Misinformation check</span><h2>Spot the myth before it spreads</h2></div>
+            <p>Strange animals attract strange claims. Every blind box carries a card that busts one of them. Here are three, with the evidence behind each answer.</p>
+          </div>
+          <div className="myth-grid">
+            {mythChecks.map((myth) => {
+              const open = openMyths.includes(myth.id);
+              return (
+                <article className={`myth-card ${open ? "open" : ""}`} key={myth.id}>
+                  <div className="myth-photo" style={{ background: myth.color }}>
+                    <Image src={myth.image} alt={`${myth.animal} plush`} fill sizes="(max-width: 900px) 100vw, 33vw" />
+                    <span className="myth-animal">{myth.animal}</span>
+                  </div>
+                  <div className="myth-body">
+                    <span className="myth-label claim">Claim going around</span>
+                    <p className="myth-claim">&ldquo;{myth.claim}&rdquo;</p>
+                    <button type="button" className="myth-toggle" aria-expanded={open} onClick={() => setOpenMyths((items) => open ? items.filter((id) => id !== myth.id) : [...items, myth.id])}>
+                      {open ? "Hide the fact-check" : "Fact-check this"} <Icon name={open ? "close" : "arrow"} />
+                    </button>
+                    {open && (
+                      <div className="myth-fact" aria-live="polite">
+                        <span className="myth-verdict">Verdict: {myth.verdict}</span>
+                        <p>{myth.fact}</p>
+                        <a href={myth.url} target="_blank" rel="noreferrer">{myth.source} <Icon name="arrow" /></a>
+                      </div>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="impact-section" id="how">
         <div className="shell impact-grid">
           <div className="impact-copy">
@@ -332,6 +418,10 @@ export default function Home() {
             <span className="kicker">Mystery toy. Verified story.</span>
             <h2>The internet moves fast.<br/>We’d rather get it right.</h2>
             <p>Social media can turn a strange animal into a star overnight. It can also turn a protected species into a prop, or a wild encounter into a trend other people try to copy. The figures here track that gap between attention and accuracy.</p>
+            <dl className="truth-define">
+              <div><dt>Misinformation</dt><dd>False information shared by mistake, like passing along an AI-made animal video that looks real.</dd></div>
+              <div><dt>Disinformation</dt><dd>False information spread on purpose, like selling wild-caught animals as captive-bred.</dd></div>
+            </dl>
             <div className="truth-rule"><span>WILDKIN RULE 01</span><b>Hide the plush. Never hide the source.</b></div>
           </div>
           <div className="stat-grid">
@@ -408,7 +498,7 @@ export default function Home() {
       </section>
 
       <section className="newsletter shell">
-        <div><span className="kicker">Join the field notes</span><h2>New creatures. Wild stories. Zero boring emails.</h2></div>
+        <div><span className="kicker">Join the field notes</span><h2>New creatures. Real sources. Zero rumors.</h2></div>
         {newsletter ? <div className="newsletter-success"><Icon name="check" /><span><b>You’re on the trail!</b> Watch your inbox for the next field note.</span></div> : <form onSubmit={(e) => { e.preventDefault(); setNewsletter(true); }}><label className="sr-only" htmlFor="email">Email address</label><input required type="email" id="email" placeholder="Your email address" autoComplete="email" inputMode="email" enterKeyHint="send"/><button type="submit">Join the club <Icon name="arrow" /></button><small>By joining, you agree to receive occasional wild news. Unsubscribe anytime.</small></form>}
       </section>
 
