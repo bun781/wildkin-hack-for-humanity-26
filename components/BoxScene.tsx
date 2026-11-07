@@ -113,8 +113,6 @@ function Hidden({ uid }: { uid: string }) {
       <rect width="185" height="255" fill={`url(#${uid}-bg)`} />
       <circle cx="128" cy="140" r="18" fill="#e2a72d" />
       <path d="M0 160 L38 108 L62 138 L92 92 L128 142 L152 118 L185 156 V255 H0Z" fill="#5a3425" />
-      <path d="M92 92 L80 110 L88 106 L94 114 L100 106 L106 110Z" fill="#f1e4cf" />
-      <path d="M38 108 L30 120 L36 117 L40 123 L45 117 L48 120Z" fill="#f1e4cf" />
       <path d="M0 184 L30 160 L58 182 L90 156 L126 186 L158 164 L185 188 V255 H0Z" fill="#3a2018" />
       <path d="M92 158 C80 182 120 194 102 214 C88 230 70 238 56 255 L128 255 C134 238 116 230 120 214 C134 192 100 182 102 158Z" fill={`url(#${uid}-river)`} />
       <g fill="none" stroke="#fff" strokeOpacity=".55" strokeWidth="1.3" strokeLinecap="round">
