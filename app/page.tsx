@@ -219,7 +219,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="announcement"><span>Habitat blind boxes are open</span><span>•</span><span>Every box ships with a myth-busting species card</span></div>
+      <div className="announcement"><span>Habitat blind boxes are open</span><span>•</span><span>Every box includes a peelable collector card</span></div>
       <header className="nav-wrap">
         <nav className="nav shell" aria-label="Main navigation">
           <a className="logo" href="#top" aria-label="Oddkin home"><span className="logo-mark">O</span> oddkin</a>
@@ -228,7 +228,7 @@ export default function Home() {
             <a href="#shop" onClick={() => setMenuOpen(false)}>Meet the pulls</a>
             <a href="#myths" onClick={() => setMenuOpen(false)}>Spot the myth</a>
             <a href="#how" onClick={() => setMenuOpen(false)}>How it helps</a>
-            <a href="#passport" onClick={() => setMenuOpen(false)}>Collector’s club</a>
+            <a href="#sticker-cards" onClick={() => setMenuOpen(false)}>Peelable cards</a>
             <a href="#origin-map" onClick={() => setMenuOpen(false)}>Track your friend</a>
           </div>
           <div className="nav-actions">
@@ -276,7 +276,7 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading split blind-box-heading">
             <div><span className="kicker light">Choose your ecosystem</span><h2>Three habitats.<br/>Zero normal faces.</h2></div>
-            <p>Each solid-cardboard box is themed to the animals’ wild homes. The seal carries the ID you can enter on the map after opening. Inside, a card busts one common myth about the animal.</p>
+            <p>Each solid-cardboard box is themed to the animals’ wild homes. The seal carries the ID you can enter on the map after opening. Inside, a peelable collector card turns the animal into a sticker.</p>
           </div>
           <div className="box-grid">
             {habitatBoxes.map((box, index) => {
@@ -360,7 +360,7 @@ export default function Home() {
         <div className="shell">
           <div className="section-heading split">
             <div><span className="kicker">Misinformation check</span><h2>Spot the myth before it spreads</h2></div>
-            <p>Strange animals attract strange claims. Every blind box carries a card that busts one of them. Here are three, with the evidence behind each answer.</p>
+            <p>Strange animals attract strange claims. Every blind box carries a peelable card that busts one of them. Here are three, with the evidence behind each answer.</p>
           </div>
           <div className="myth-grid">
             {mythChecks.map((myth) => {
@@ -400,7 +400,7 @@ export default function Home() {
             <p>Oddkin turns curiosity into care. Every friend introduces its real-life species, its wild home, and one simple action your family can take.</p>
             <div className="impact-list">
               <div><span>01</span><p><b>Pick a habitat</b>Choose the blind box that matches the wild home you love.</p></div>
-              <div><span>02</span><p><b>Unlock their story</b>Scan the keepsake card for facts and activities.</p></div>
+              <div><span>02</span><p><b>Keep it or peel it</b>Collect the card intact or stick the animal somewhere loud.</p></div>
               <div><span>03</span><p><b>Help their habitat</b>Part of every purchase supports field conservation.</p></div>
             </div>
           </div>
@@ -474,17 +474,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="passport-section shell" id="passport">
-        <div className="passport-visual">
-          <div className="passport-cover"><span>ODDKIN</span><b>FIELD<br/>PASSPORT</b><i><Image src="/plushies/redsy.png" alt="" fill sizes="64px" /></i><small>Junior conservation club</small></div>
-          <div className="passport-page"><span>SPECIES SIGHTINGS</span><div className="stamp-grid">{products.slice(0,4).map((p) => <div key={p.id}><i><Image src={p.image} alt="" fill sizes="34px" /></i><small>{p.species}</small></div>)}</div></div>
+      <section className="sticker-section shell" id="sticker-cards">
+        <div className="sticker-visual" aria-label="An Oddkin collector card with its animal sticker partly peeled away">
+          <div className="sticker-backing" aria-hidden="true">
+            <span>ODDKIN · 001</span>
+            <b>YOU FOUND<br/>THE WEIRD ONE.</b>
+            <small>Red handfish · Tasmania</small>
+          </div>
+          <div className="sticker-front" aria-hidden="true">
+            <span className="sticker-series">SERIES 01 · OCEAN DEPTHS</span>
+            <div className="sticker-animal"><Image src="/plushies/redsy.png" alt="" fill sizes="260px" /></div>
+            <small>RED HANDFISH</small>
+            <b>REDSY</b>
+            <em>PEEL + STICK</em>
+            <i>↗</i>
+          </div>
+          <div className="sticker-loose" aria-hidden="true"><Image src="/plushies/kakapo-neutral.png" alt="" fill sizes="110px" /><b>TEAM KĀKĀPŌ</b></div>
         </div>
-        <div className="passport-copy">
-          <span className="kicker">Made for collectors</span>
-          <h2>Your adventures belong in a passport.</h2>
-          <p>Every plushie includes a collectible species stamp. Add it to your Field Passport, complete monthly mini-missions, and reveal secret habitat badges.</p>
-          <ul><li><Icon name="check" /> One numbered species stamp per plushie</li><li><Icon name="check" /> Monthly screen-free nature missions</li><li><Icon name="check" /> Surprise badges for completing a habitat set</li></ul>
-          <a className="button dark" href="#shop">Start your collection <Icon name="arrow" /></a>
+        <div className="sticker-copy">
+          <span className="kicker">A card until you peel it</span>
+          <h2>Collect it. Trade it. Stick it anywhere.</h2>
+          <p>Every blind box includes a numbered animal card with a durable peel-off sticker on the front. Keep the card pristine, or peel the animal loose for your laptop, bottle, notebook, or wherever weird belongs.</p>
+          <ul><li><Icon name="check" /> Trading-card size and numbered by series</li><li><Icon name="check" /> Durable animal sticker on every card</li><li><Icon name="check" /> Hidden artwork stays behind after the peel</li></ul>
+          <a className="button dark" href="#blind-boxes">Pull your first card <Icon name="arrow" /></a>
         </div>
       </section>
 
@@ -501,7 +513,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="shell footer-grid"><div><a className="logo footer-logo" href="#top"><span className="logo-mark">O</span> oddkin</a><p>Plushies with a purpose.<br/>Made for soft hearts and wild minds.</p></div><div><b>Explore</b><a href="#shop">Shop all</a><a href="#passport">Collector’s club</a></div><div><b>Help</b><a href="#top">Shipping & returns</a><a href="#top">Care guide</a><a href="#top">Contact</a></div><div><b>Our promise</b><a href="#how">Giving back</a><a href="#how">Materials</a><a href="#how">Conservation</a></div></div>
+        <div className="shell footer-grid"><div><a className="logo footer-logo" href="#top"><span className="logo-mark">O</span> oddkin</a><p>Plushies with a purpose.<br/>Made for soft hearts and wild minds.</p></div><div><b>Explore</b><a href="#shop">Shop all</a><a href="#sticker-cards">Peelable cards</a></div><div><b>Help</b><a href="#top">Shipping & returns</a><a href="#top">Care guide</a><a href="#top">Contact</a></div><div><b>Our promise</b><a href="#how">Giving back</a><a href="#how">Materials</a><a href="#how">Conservation</a></div></div>
         <div className="shell footer-bottom"><span>© 2026 Oddkin. Concept storefront.</span><span>Made with care for the wonderfully wild.</span></div>
       </footer>
 
