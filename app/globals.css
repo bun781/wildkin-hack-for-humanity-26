@@ -384,6 +384,10 @@ footer { background: var(--ink-deep); color: white; padding: 75px 0 28px; }
 .footer-grid b { margin-bottom: 8px; color: var(--lime); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; }
 .footer-grid a:not(.logo) { color: #d4e1dc; }
 .footer-bottom { margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.14); display: flex; justify-content: space-between; color: #8da69e; font-size: 11px; }
+.footer-made-by { margin-top: 28px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.14); }
+.footer-made-by b { display: block; margin-bottom: 9px; color: var(--lime); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.footer-made-by p { margin: 0; color: #d4e1dc; font-size: 14px; line-height: 1.6; }
+.footer-made-by small { display: block; margin-top: 7px; color: #8da69e; font-size: 11px; }
 
 .drawer-backdrop { position: fixed; inset: 0; z-index: 50; background: rgba(3,24,19,.5); border: 0; cursor: pointer; }
 .cart-drawer { position: fixed; z-index: 60; right: 0; top: 0; bottom: 0; width: min(470px, 100%); background: var(--paper); padding: 32px; display: flex; flex-direction: column; border-left: 1px solid var(--line); animation: slideIn .25s ease-out; }
