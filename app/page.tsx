@@ -22,13 +22,13 @@ type Product = {
 const products: Product[] = [
   { id: 1, name: "Redsy", species: "Red handfish", scientificName: "Thymichthys politus", region: "Oceania", rarity: "Critically endangered", image: "/cards/red-handfish.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
   { id: 2, name: "Moss", species: "Kākāpō", scientificName: "Strigops habroptilus", region: "Oceania", rarity: "Critically endangered", image: "/cards/kakapo.png", color: "#476f2e", accent: "#ffffff", fact: "Kākāpō are the world’s only flightless, nocturnal parrots.", badge: "New" },
-  { id: 3, name: "Wrinkle", species: "Chinese giant salamander", scientificName: "Andrias davidianus", region: "Asia", rarity: "Critically endangered", image: "/cards/chinese-giant-salamander.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
+  { id: 3, name: "Danny", species: "Chinese giant salamander", scientificName: "Andrias davidianus", region: "Asia", rarity: "Critically endangered", image: "/cards/chinese-giant-salamander.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
 ];
 
 const heroCards = [
   { name: "Redsy", species: "Red handfish", card: "/cards/red-handfish.png", wild: "/references/red-handfish-wild.jpg" },
   { name: "Moss", species: "Kākāpō", card: "/cards/kakapo.png", wild: "/references/kakapo-wild.jpg" },
-  { name: "Wrinkle", species: "Chinese giant salamander", card: "/cards/chinese-giant-salamander.png", wild: "/references/chinese-giant-salamander-wild.jpg" },
+  { name: "Danny", species: "Chinese giant salamander", card: "/cards/chinese-giant-salamander.png", wild: "/references/chinese-giant-salamander-wild.jpg" },
 ];
 
 // Cards are sold in habitat-themed packs.
@@ -135,7 +135,7 @@ type AnimalRecord = {
 const animalRecords: AnimalRecord[] = [
   { code: "OD-REDSY-104", name: "Redsy", species: "Red handfish", place: "Frederick Henry Bay, Tasmania", habitat: "Shallow rocky reef", image: "/cards/red-handfish.png", lat: -42.96, lng: 147.53, marker: "HF", color: "#9f352d" },
   { code: "OD-MOSS-208", name: "Moss", species: "Kākāpō", place: "Whenua Hou, Aotearoa New Zealand", habitat: "Predator-free island forest", image: "/cards/kakapo.png", lat: -46.77, lng: 167.64, marker: "KP", color: "#476f2e" },
-  { code: "OD-WRINKLE-311", name: "Wrinkle", species: "Chinese giant salamander", place: "Central and southern China", habitat: "Cool, fast-flowing mountain rivers", image: "/cards/chinese-giant-salamander.png", lat: 30.55, lng: 110.48, marker: "GS", color: "#584636" },
+  { code: "OD-WRINKLE-311", name: "Danny", species: "Chinese giant salamander", place: "Central and southern China", habitat: "Cool, fast-flowing mountain rivers", image: "/cards/chinese-giant-salamander.png", lat: 30.55, lng: 110.48, marker: "GS", color: "#584636" },
   { code: "OD-FLAP-419", name: "Flap", species: "Dumbo octopus", place: "North Atlantic deep sea", habitat: "Cold abyssal plains, roughly 3,000–4,000 m deep", image: "/plushies/dumbo-octopus-ugly.png", lat: 38.2, lng: -31.1, marker: "DO", color: "#164f74" },
   { code: "OD-TRUFFLE-526", name: "Truffle", species: "Purple frog", place: "Western Ghats, India", habitat: "Underground in tropical forest soil", image: "/plushies/purple-frog-ugly.png", lat: 10.18, lng: 76.5, marker: "PF", color: "#4d2b50" },
   { code: "OD-KNUCKLES-637", name: "Knuckles", species: "Aye-aye", place: "Eastern Madagascar", habitat: "Tropical rainforest canopy", image: "/plushies/aye-aye-ugly.png", lat: -18.8, lng: 48.45, marker: "AA", color: "#3d362f" },
