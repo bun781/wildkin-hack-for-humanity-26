@@ -9,6 +9,7 @@ type Product = {
   id: number;
   name: string;
   species: string;
+  scientificName: string;
   region: string;
   rarity: "Vulnerable" | "Endangered" | "Critically endangered" | "Not evaluated";
   image: string;
@@ -19,15 +20,9 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 1, name: "Redsy", species: "Red handfish", region: "Oceania", rarity: "Critically endangered", image: "/cards/red-handfish.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
-  { id: 2, name: "Moss", species: "Kākāpō", region: "Oceania", rarity: "Critically endangered", image: "/cards/kakapo.png", color: "#476f2e", accent: "#ffffff", fact: "Kākāpō are the world’s only flightless, nocturnal parrots.", badge: "New" },
-  { id: 3, name: "Wrinkle", species: "Chinese giant salamander", region: "Asia", rarity: "Critically endangered", image: "/cards/chinese-giant-salamander.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
-];
-
-const heroCards = [
-  { name: "Redsy", species: "Red handfish", card: "/cards/red-handfish.png", wild: "/references/red-handfish-wild.jpg" },
-  { name: "Moss", species: "Kākāpō", card: "/cards/kakapo.png", wild: "/references/kakapo-wild.jpg" },
-  { name: "Wrinkle", species: "Chinese giant salamander", card: "/cards/chinese-giant-salamander.png", wild: "/references/chinese-giant-salamander-wild.jpg" },
+  { id: 1, name: "Redsy", species: "Red handfish", scientificName: "Thymichthys politus", region: "Oceania", rarity: "Critically endangered", image: "/cards/red-handfish.png", color: "#9f352d", accent: "#ffffff", fact: "Red handfish walk across the seafloor on hand-shaped fins.", badge: "Rare find" },
+  { id: 2, name: "Moss", species: "Kākāpō", scientificName: "Strigops habroptilus", region: "Oceania", rarity: "Critically endangered", image: "/cards/kakapo.png", color: "#476f2e", accent: "#ffffff", fact: "Kākāpō are the world’s only flightless, nocturnal parrots.", badge: "New" },
+  { id: 3, name: "Wrinkle", species: "Chinese giant salamander", scientificName: "Andrias davidianus", region: "Asia", rarity: "Critically endangered", image: "/cards/chinese-giant-salamander.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
 ];
 
 // Cards are sold in habitat-themed packs.
@@ -173,6 +168,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
   const [selectedBoxId, setSelectedBoxId] = useState(habitatBoxes[0].id);
+  const [creatureIndex, setCreatureIndex] = useState(0);
   const [animalCode, setAnimalCode] = useState("");
   const [openMyths, setOpenMyths] = useState<string[]>([]);
   const [selectedAnimal, setSelectedAnimal] = useState<AnimalRecord>(animalRecords[0]);
@@ -181,6 +177,8 @@ export default function Home() {
   const total = cart.length * CARD_PACK_PRICE;
   const selectedBox = habitatBoxes.find((box) => box.id === selectedBoxId) ?? habitatBoxes[0];
   const selectedCard = products.find((product) => selectedBox.productIds.includes(product.id)) ?? products[0];
+  const creature = products[creatureIndex];
+  const creatureRecord = animalRecords[creatureIndex];
 
   useEffect(() => {
     const locked = cartOpen || menuOpen;
@@ -243,20 +241,10 @@ export default function Home() {
             </div>
             <TrackerForm code={animalCode} setCode={setAnimalCode} onSubmit={findAnimal} />
           </div>
-          <div className="hero-template" aria-label="Endangered animals and their collector cards">
-            <div className="template-sun" />
-            <div className="template-hill hill-one" /><div className="template-hill hill-two" />
-            {heroCards.map((card, index) => (
-              <figure className={`hero-card hero-card-${index + 1}`} key={card.name}>
-                <div className="hero-card-media">
-                  <div className="hero-card-photo"><Image src={card.card} alt={`${card.species} collector card`} fill sizes="(max-width: 600px) 150px, 230px" priority={index === 0} /></div>
-                  <span className="hero-wild"><Image src={card.wild} alt={`${card.species} in the wild`} fill sizes="90px" /></span>
-                  <span className="hero-wild-tag">In the wild</span>
-                </div>
-                <figcaption><b>{card.name}</b><small>{card.species}</small></figcaption>
-              </figure>
-            ))}
-            <div className="hero-blind-box" aria-hidden="true"><BoxScene id="ocean" /><span>ODDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat card pack · 01</small></div>
+          <div className="finished-card-stack hero-finished-card-stack" aria-label="The Red Handfish, Kākāpō, and Chinese giant salamander collector cards">
+            <div className="finished-card card-red"><Image src="/cards/red-handfish.png" alt="Red Handfish collector card" fill sizes="260px" priority /></div>
+            <div className="finished-card card-kakapo"><Image src="/cards/kakapo.png" alt="Kākāpō collector card" fill sizes="260px" /></div>
+            <div className="finished-card card-salamander"><Image src="/cards/chinese-giant-salamander.png" alt="Chinese giant salamander collector card" fill sizes="260px" /></div>
           </div>
         </div>
       </section>
@@ -448,13 +436,18 @@ export default function Home() {
       <section className="creature-section" id="creature-lab">
         <div className="shell creature-layout">
           <div className="creature-copy">
-            <span className="kicker">Card specimen · Thymichthys politus</span>
-            <h2>Meet the red handfish.<br/>Strange is worth saving.</h2>
-            <p>It has a face only the seafloor could love, with fins shaped like tiny hands. This exceptionally rare Tasmanian fish walks more than it swims, making it the perfect ambassador for overlooked wildlife.</p>
-            <div className="creature-facts"><div><span>Habitat</span><b>Shallow Tasmanian reefs</b></div><div><span>Status</span><b>Critically endangered</b></div><div><span>Odd talent</span><b>Walking on its fins</b></div></div>
+            <span className="kicker">Card specimen · {creature.scientificName}</span>
+            <h2>Meet the {creature.species.toLowerCase()}.<br/>Strange is worth saving.</h2>
+            <p>{mythChecks[creatureIndex].fact}</p>
+            <div className="creature-facts"><div><span>Habitat</span><b>{creatureRecord.habitat}</b></div><div><span>Status</span><b>{creature.rarity}</b></div><div><span>Wild home</span><b>{creatureRecord.place}</b></div></div>
             <p className="drag-note">Designed as bold, peelable card art with species details that turn curiosity into real conservation knowledge.</p>
+            <div className="creature-controls" aria-label="Choose an animal card">
+              <button type="button" className="creature-step previous" onClick={() => setCreatureIndex((creatureIndex + products.length - 1) % products.length)} aria-label="Previous animal"><Icon name="arrow" /></button>
+              <div>{products.map((product, index) => <button type="button" key={product.id} className={index === creatureIndex ? "active" : ""} aria-pressed={index === creatureIndex} onClick={() => setCreatureIndex(index)}>{product.species}</button>)}</div>
+              <button type="button" className="creature-step" onClick={() => setCreatureIndex((creatureIndex + 1) % products.length)} aria-label="Next animal"><Icon name="arrow" /></button>
+            </div>
           </div>
-          <div className="plush-showcase"><Image src="/cards/red-handfish.png" alt="Red handfish collector card" fill sizes="(max-width: 900px) 100vw, 58vw" priority /></div>
+          <div className="plush-showcase" key={creature.id}><Image src={creature.image} alt={`${creature.species} collector card`} fill sizes="(max-width: 900px) 100vw, 58vw" priority /></div>
         </div>
       </section>
 
