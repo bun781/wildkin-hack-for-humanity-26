@@ -25,6 +25,12 @@ const products: Product[] = [
   { id: 3, name: "Wrinkle", species: "Chinese giant salamander", scientificName: "Andrias davidianus", region: "Asia", rarity: "Critically endangered", image: "/cards/chinese-giant-salamander.png", color: "#584636", accent: "#ffffff", fact: "This ancient amphibian breathes partly through its wrinkled skin." },
 ];
 
+const heroCards = [
+  { name: "Redsy", species: "Red handfish", card: "/cards/red-handfish.png", wild: "/references/red-handfish-wild.jpg" },
+  { name: "Moss", species: "Kākāpō", card: "/cards/kakapo.png", wild: "/references/kakapo-wild.jpg" },
+  { name: "Wrinkle", species: "Chinese giant salamander", card: "/cards/chinese-giant-salamander.png", wild: "/references/chinese-giant-salamander-wild.jpg" },
+];
+
 // Cards are sold in habitat-themed packs.
 const CARD_PACK_PRICE = 5.99;
 
@@ -241,10 +247,20 @@ export default function Home() {
             </div>
             <TrackerForm code={animalCode} setCode={setAnimalCode} onSubmit={findAnimal} />
           </div>
-          <div className="finished-card-stack hero-finished-card-stack" aria-label="The Red Handfish, Kākāpō, and Chinese giant salamander collector cards">
-            <div className="finished-card card-red"><Image src="/cards/red-handfish.png" alt="Red Handfish collector card" fill sizes="260px" priority /></div>
-            <div className="finished-card card-kakapo"><Image src="/cards/kakapo.png" alt="Kākāpō collector card" fill sizes="260px" /></div>
-            <div className="finished-card card-salamander"><Image src="/cards/chinese-giant-salamander.png" alt="Chinese giant salamander collector card" fill sizes="260px" /></div>
+          <div className="hero-template" aria-label="Endangered animals and their collector cards">
+            <div className="template-sun" />
+            <div className="template-hill hill-one" /><div className="template-hill hill-two" />
+            {heroCards.map((card, index) => (
+              <figure className={`hero-card hero-card-${index + 1}`} key={card.name}>
+                <div className="hero-card-media">
+                  <div className="hero-card-photo"><Image src={card.card} alt={`${card.species} collector card`} fill sizes="(max-width: 600px) 150px, 230px" priority={index === 0} /></div>
+                  <span className="hero-wild"><Image src={card.wild} alt={`${card.species} in the wild`} fill sizes="90px" /></span>
+                  <span className="hero-wild-tag">In the wild</span>
+                </div>
+                <figcaption><b>{card.name}</b><small>{card.species}</small></figcaption>
+              </figure>
+            ))}
+            <div className="hero-blind-box" aria-hidden="true"><BoxScene id="ocean" /><span>ODDKIN</span><b>OCEAN<br/>DEPTHS</b><i>?</i><small>Habitat card pack · 01</small></div>
           </div>
         </div>
       </section>
